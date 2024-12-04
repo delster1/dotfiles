@@ -16,9 +16,15 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
-[ -f "/home/delster3/.ghcup/env" ] && . "/home/delster3/.ghcup/env" # ghcup-env
+# Zsh plugins
+plugins=(
+  tmux
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+# NVM setup
 export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -31,3 +37,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 eval "$(starship init zsh)"
 neofetch --disable packages
+

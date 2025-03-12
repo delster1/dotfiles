@@ -1,7 +1,7 @@
 palette = "coolor"
 
 format = """
-[░▒▓](slate)\
+[░▒▓](slate)\
 [ ](bg:slate fg:sgreen)\
 [](bg:sgreen fg:slate)\
 [ ](bg:sgreen fg:slate)\
@@ -11,16 +11,17 @@ $directory\
 [](fg:slate bg:darkslate)\
 $git_branch\
 $git_status\
-[](fg:darkslate bg:#)\
+[](fg:darkslate bg:#)\
 \n$character"""
 
 right_format = """
+[](fg:mydark )
 $nodejs\
 $rust\
 $golang\
 $php\
 
-[](fg:slate)
+[](fg:slate bg:mydark)
 $time\
 [](fg:slate)\
 $battery\
@@ -33,6 +34,7 @@ $cmd_duration\
 [palettes.coolor]
 night = '#00120b'
 darkslate = '#35605a'
+mydark = '#212736'
 ddslate = '#2b4f4a'
 slate = '#6b818c'
 lavender = '#d8e4ff'
@@ -83,48 +85,48 @@ format = '[[($all_status$ahead_behind )](fg:jade bg:darkslate)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:pink bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:pink bg:mydark)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:pink bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:pink bg:mydark)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:pink bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:pink bg:mydark)]($style)'
 
 [python]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:pink bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:pink bg:mydark)]($style)'
 
 [c]
 symbol = "c"
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:pink bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:pink bg:mydark)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:pink bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:pink bg:mydark)]($style)'
 
 [lua]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:pink bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:pink bg:mydark)]($style)'
 
 [bun]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:pink bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:pink bg:mydark)]($style)'
 
 [php]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:slate bg:#212736)]($style)'
+style = "bg:mydark"
+format = '[[ $symbol ($version) ](fg:slate bg:mydark)]($style)'
 
 
 # UTILITIES
@@ -144,8 +146,8 @@ format = '[[  $time ](fg:night bg:slate)]($style)'
 full_symbol = ' '
 charging_symbol = '󱐋 '
 discharging_symbol = '󱐌 '
-style = "bg:#1d2230"
 format = '[ $symbol$percentage ]($style)'
+style = "bg:#1d2230"
 
 [[battery.display]]
 threshold = 10
@@ -156,7 +158,7 @@ threshold = 50
 style = 'bold yellow'
 
 [[battery.display]]
-threshold = 100
+threshold = 99
 style = 'bold green'
 
 [cmd_duration]

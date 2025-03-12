@@ -1,0 +1,223 @@
+@import "/home/d3/.cache/wal/colors-waybar.css";
+
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "Noto Sans CJK KR Regular";
+  /*font-family: "D2CodingLigature Nerd Mono";*/
+	border-radius: 30;
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  /*    background-color: rgba(43, 48, 59, 0.5); */
+  /*    border-bottom: 3px solid rgba(120, 114, 125, 0.5); */
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+.modules-left {
+	background-color: transparent;
+	margin: 2;
+	margin-left: 0px;
+	padding: 0px 5px 0px 0px;
+}
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#waybar.empty #window {
+  background-color: transparent;
+}
+
+#workspaces {
+	margin: 5;
+	background-color: @color1;
+	padding-left: 8px;
+	border-radius: 30;
+	padding-right: 8px;
+}
+
+#window {
+	margin: 2;
+  padding-left: 12px;
+  border-radius: 30;
+  padding-right: 12px;
+  background-color: @color1;
+  font-size:12px;
+  font-weight: bold;
+}
+
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 30;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  border-top: 5px solid #c9545d;
+}
+
+#workspaces button {
+  padding: 0 6px;
+     /* background-color: @color1; */
+}
+
+#workspaces button:hover {
+}
+
+#workspaces button.focused {
+  /*    box-shadow: inset 0 -2px #c9545d; */
+  background-color: rgba(0,0,0,0.3);
+  color:@color3;
+  border-top: 2px solid @color6;
+}
+
+#workspaces button.active {
+  /*    box-shadow: inset 0 -2px #c9545d; */
+  background-color: rgba(0,0,0,0.3);
+  color: @color3;
+  border-top: 2px solid @color6;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #64727D;
+  border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+  margin: 2px;
+	border-radius: 30;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: @color9;
+  color: #ffffff;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#clock {
+  font-size:12px;
+	border-radius: 30;
+  font-weight: bold;
+}
+
+#battery icon {
+  color: red;
+	border-radius: 30;
+}
+
+#battery.charging, #battery.plugged {
+  color: #ffffff;
+	border-radius: 30;
+  background-color: #26A65B;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.warning:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+	border-radius: 30;
+  animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+	border-radius: 30;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#network.disconnected {
+	border-radius: 30;
+  background-color: #f53c3c;
+}
+
+#temperature.critical {
+	border-radius: 30;
+  background-color: #eb4d4b;
+}
+
+#idle_inhibitor.activated {
+	border-radius: 30;
+  background-color: #ecf0f1;
+  color: #2d3436;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+	border-radius: 30;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+	border-radius: 30;
+  background-color: #eb4d4b;
+}
+
+/*
+
+window#waybar.solo {
+background-color: #FFFFFF;
+}
+
+window#waybar.termite {
+background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+background-color: #000000;
+border: none;
+}
+ */

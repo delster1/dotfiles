@@ -18,7 +18,10 @@
 
     # The frame color and width of the notification
     frame_color = "{color4}"
-    frame_width = 6
+	transparency = 100
+    frame_width = 1
+
+	corner_radius = 10
 
     # How long a user needs to be idle for sticky notifications
     idle_threshold = 120

@@ -9,7 +9,8 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 
 
 # Other environment variables and configurations
-export TERM=xterm-256color
+# export TERM=xterm-256color
+export TERM=screen-256color
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

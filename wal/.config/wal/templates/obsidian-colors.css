@@ -1,3 +1,7 @@
+:root {
+  --color-accent: {color1} !important;
+}
+
 .theme-dark {{
         --background-primary: {background} !important;
         --background-secondary: {background} !important;
@@ -14,8 +18,6 @@
         --background-modifier-border-hover: {color1}33 !important;
         --indentation-guide-color: {color1}33 !important;
         --indentation-guide-color-active: {color1}77 !important;
-
-		--accent-color: {background} !important;
 }}
 
 .theme-dark .nav-folder-title-content::before {{
@@ -25,3 +27,5 @@
 body {{
   --tab-stacked-pane-width: 100%;
 }}
+
+

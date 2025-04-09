@@ -1,9 +1,11 @@
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
+vim.o.guicursor = 'i:ver100'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.g.mapleader = "," 
+-- vim.o.showtabline = 2
 -- vim.opt.termguicolors = true
 
 -- --THEME ROTATE LEADERrt

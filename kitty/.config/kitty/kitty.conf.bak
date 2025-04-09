@@ -5,8 +5,7 @@
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
-
-font_family     MesloLGS NF 
+# font_family     MesloLGS NF 
 # bold_font        auto
 # italic_font      auto
 # bold_italic_font auto
@@ -307,7 +306,7 @@ font_family     MesloLGS NF
 #: Stop blinking cursor after the specified number of seconds of
 #: keyboard inactivity. Set to zero to never stop blinking.
 
-# cursor_trail 0
+cursor_trail 1
 
 #: Set this to a value larger than zero to enable a "cursor trail"
 #: animation. This is an animation that shows a "trail" following the
@@ -323,7 +322,7 @@ font_family     MesloLGS NF
 #: cursor_trail_start_threshold to control when a cursor trail is
 #: started.
 
-# cursor_trail_decay 0.1 0.4
+cursor_trail_decay 0.4 0.10
 
 #: Controls the decay times for the cursor trail effect when the
 #: cursor_trail is enabled. This option accepts two positive float
@@ -1472,7 +1471,8 @@ background_blur 32
 #: See rc_custom_auth <https://sw.kovidgoyal.net/kitty/remote-
 #: control/#rc-custom-auth> for details.
 
-# allow_remote_control no
+ allow_remote_control yes 
+	 # changed for kitty-scrollbar
 
 #: Allow other programs to control kitty. If you turn this on, other
 #: programs can control all aspects of kitty, including sending text
@@ -1501,7 +1501,8 @@ background_blur 32
 #: yes
 #:     Remote control requests are always accepted.
 
-# listen_on none
+listen_on unix:/tmp/kitty 
+	# changed for kitty-scrollbar
 
 #: Listen to the specified socket for remote control connections. Note
 #: that this will apply to all kitty instances. It can be overridden
@@ -1607,7 +1608,7 @@ background_blur 32
 #: config is not supported. Note that if kitty is invoked with command
 #: line arguments specifying a command to run, this option is ignored.
 
-# clipboard_control write-clipboard write-primary read-clipboard-ask read-primary-ask
+clipboard_control write-clipboard write-primary read-clipboard-ask read-primary-ask
 
 #: Allow programs running in kitty to read and write from the
 #: clipboard. You can control exactly which actions are allowed. The
@@ -1645,7 +1646,8 @@ background_blur 32
 #: special value of ask means that kitty will ask before opening the
 #: link when clicked.
 
-# shell_integration enabled
+shell_integration enabled 
+	# changed for kitty_scrollbar
 
 #: Enable shell integration on supported shells. This enables features
 #: such as jumping to previous prompts, browsing the output of the
@@ -2643,6 +2645,15 @@ background_blur 32
 
 # BEGIN_KITTY_THEME
 # Catppuccin-Mocha
-include current-theme.conf
+# include kitty-themes/themes/SpaceGray_Eighties.conf
+include ~/.cache/wal/colors-kitty.conf
 # END_KITTY_THEME
-font_family Hack NF
+# font_family Hack NF
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Hack Nerd Font"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS

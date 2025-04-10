@@ -5,6 +5,9 @@ vim.o.guicursor = "i:ver100"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.g.mapleader = ","
+
+vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 -- vim.o.showtabline = 2
 -- vim.opt.termguicolors = true
 

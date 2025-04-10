@@ -1,4 +1,5 @@
 return {
+	
 	{
 		-- Mason for managing external tools
 		"williamboman/mason.nvim",
@@ -33,12 +34,13 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "saghen/blink.cmp" },
+		dependencies = { { "saghen/blink.cmp" }, { "L3MON4D3/LuaSnip", version = "v2.*" } },
 
 		-- example using `opts` for defining servers
 		opts = {
 			servers = {
 				gopls = {},
+				clangd = {},
 				biome = {},
 				dprint = {},
 				glint = {},
@@ -56,6 +58,8 @@ return {
 		},
 		config = function(_, opts)
 			local lspconfig = require("lspconfig")
+			local ls = require("luasnip")
+			require("luasnip.loaders.from_vscode").lazy_load()
 			for server, config in pairs(opts.servers) do
 				-- passing config.capabilities to blink.cmp merges with the capabilities in your
 				-- `opts[server].capabilities, if you've defined it

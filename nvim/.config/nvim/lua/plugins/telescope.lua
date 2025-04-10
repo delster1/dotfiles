@@ -52,8 +52,9 @@ return {
 		-- Keybindings for various Telescope functions
 		vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = "Find Files" })
 		vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Live Grep" })
-		vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Buffers" })
 		vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help Tags" })
+		vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = "Live Refs" })
+		vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Buffers" })
 
 		-- Load Telescope extensions if needed
 		-- telescope.load_extension('your_extension_name')

@@ -1,6 +1,3 @@
 
 # Ignore GitHub CLI creds
 nvim/.config/gh/**
-
-# Ignore GitHub CLI creds
-nvim/.config/gh/**

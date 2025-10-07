@@ -3,9 +3,26 @@
 # Aliases and PATH setup
 alias nv='nvim'
 alias py='python3'
+alias ls='eza --icons=auto'                                         # short list
 alias switcher=~/switch-theme.sh
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/opt/nvim-linux64/bin"
+
+# history stuff
+# History file and size
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000       # Number of lines kept in memory
+SAVEHIST=1000000       # Number of lines written to HISTFILE
+
+# Share history across all zsh sessions
+setopt INC_APPEND_HISTORY      # Add commands to the history file immediately
+setopt SHARE_HISTORY           # Share history between all sessions
+setopt HIST_IGNORE_DUPS        # Ignore duplicate commands
+setopt HIST_REDUCE_BLANKS      # Remove superfluous blanks
+setopt HIST_VERIFY             # Don’t execute command straight from history
+setopt BANG_HIST               # Treat '!' specially (for !! etc.)
+setopt EXTENDED_HISTORY        # Save timestamp of command and duration
+
 
 
 # Other environment variables and configurations
@@ -47,6 +64,14 @@ bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
 bindkey -M menuselect '^M' .accept-line
 # Run neofetch on startup
 eval "$(zoxide init zsh)"
+eval $(thefuck --alias)
 eval "$(starship init zsh)"
 
 [ -f "/home/d3/.ghcup/env" ] && . "/home/d3/.ghcup/env" # ghcup-env
+
+# bun completions
+[ -s "/home/d3/.bun/_bun" ] && source "/home/d3/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

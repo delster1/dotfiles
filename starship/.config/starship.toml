@@ -171,9 +171,10 @@ format = '[[  $time ](fg:15)]($style)'
 [battery]
 full_symbol = ' '
 charging_symbol = '󱐋 '
+symbol = '󱐋 '
 discharging_symbol = '󱐌 '
 format = '[ $symbol$percentage ]($style)'
-style = "bg:#1d2230"
+style = "fg:3"
 
 [[battery.display]]
 threshold = 10

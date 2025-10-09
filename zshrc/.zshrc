@@ -48,6 +48,7 @@ fi
 # export ARCHFLAGS="-arch $(uname -m)"
 
 # ALIASES
+alias cd="z"
 alias nv="nvim"
 alias nvconf="nvim ~/.config/nvim"
 alias nvzshrc="nvim ~/.zshrc"

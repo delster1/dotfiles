@@ -104,7 +104,7 @@ cherry_pick = '[🍒 PICKING](bold red)'
 [nodejs]
 symbol = ""
 style = "bg:mydark"
-format = '[[ $symbol ($version) ](fg:28)]($style)'
+format = '[[ $symbol ($version) ](fg:6)]($style)'
 
 [rust]
 symbol = ""

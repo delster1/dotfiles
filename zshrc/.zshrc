@@ -50,8 +50,9 @@ fi
 # ALIASES
 alias cd="z"
 alias nv="nvim"
-alias nvconf="nvim ~/.dotfiles/nvim/.config/nvim"
+alias nvconf="nvim ~/.config/nvim/"
 alias nvzshrc="nvim ~/.zshrc"
+alias py="python3"
 
 
 # PACKAGES

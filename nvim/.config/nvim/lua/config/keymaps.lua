@@ -24,6 +24,9 @@ vim.keymap.set('n', '<leader>k', ":cprev <CR>", {desc = "back in qflist"})
 -- TELESCOPE 
 vim.keymap.set('n', "<leader>lf", ":Telescope oldfiles<CR>",{desc = "Telescope oldfiles"} )
 
+-- OUTLINE
+vim.keymap.set('n', "<leader>ls", ":Outline <CR>",{desc = "Outline Symbols"} )
+
 -- OIL 
 local function find_oil_float_win()
   for _, win in ipairs(vim.api.nvim_list_wins()) do

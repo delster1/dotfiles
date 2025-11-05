@@ -3,6 +3,7 @@ palette = "coolor"
 format = """
 $username\
 [ @ ](fg:9)\
+$hostname\
 $directory\
 $git_branch\
 $git_status\
@@ -192,3 +193,8 @@ style = 'bold green'
 min_time = 1
 format = 'took [$duration](bold yellow)'
 
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = false

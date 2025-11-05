@@ -194,7 +194,7 @@ min_time = 1
 format = 'took [$duration](bold yellow)'
 
 [hostname]
-ssh_only = true
-format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+ssh_only = false
+format = ' on [$hostname](bold red) '
 trim_at = '.companyname.com'
 disabled = false

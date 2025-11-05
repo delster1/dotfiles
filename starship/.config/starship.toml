@@ -195,6 +195,6 @@ format = 'took [$duration](bold yellow)'
 
 [hostname]
 ssh_only = false
-format = ' on [$hostname](bold red) '
+format = '[$hostname](bold red) '
 trim_at = '.companyname.com'
 disabled = false

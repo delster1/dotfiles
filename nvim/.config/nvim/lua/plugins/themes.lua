@@ -28,9 +28,6 @@ return {
 	"rose-pine/neovim",
   variant = "moon",
 	name = "rose-pine",
-	config = function()
-		vim.cmd("colorscheme rose-pine")
-	end
 },
 {
     "scottmckendry/cyberdream.nvim",

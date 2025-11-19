@@ -51,18 +51,21 @@ fi
 alias cd="z"
 alias c="clear"
 alias m="man"
+alias bat="batcat"
 alias nv="nvim"
 alias pls="sudo"
 alias rl="exec zsh"
 alias lg="lazygit" 
+alias "portspls"="sudo netstat -tulpn"
+alias ports="netstat -tulpn"
 
 alias nvconf="nvim ~/.dotfiles/nvim/.config/nvim/"
-alias nvfzf="nvim $(fzf -m --preview=\"bat --color=always {}\")"
-alias nvzshrc="nvim ~/.dotfiles/zshrc/.config/.zshrc"
+alias nvzshrc="nvim ~/.dotfiles/zshrc/.zshrc"
+alias "syncdots"="cd ~/.dotfiles && lg"
 
 alias py="python3"
 
-alias ls="eza -alh8 --icons --git --color=always"
+alias ls="eza -h --icons --git --color=always"
 alias ll="eza -l --icons --git --color=always"
 alias la="eza -la --icons --git --color=always"
 alias lt="eza --tree --level=3 --icons --git --color=always"
@@ -80,17 +83,13 @@ alias gs="git status"
 alias ga="git add"
 alias gA="git add -A"
 alias gp="git push"
-alias gc="git commit"
+alias gcm="git commit"
 alias gba="git branch -a"
 alias gm="git merge"
 alias gco="git checkout"
 alias gdm="git diff main"
 alias gd="git diff"
 alias "git yolo"="git add -A && git commit -m \"force pushing lmao, yolo\" && git push --force"
-
-
-
-
 
 # PACKAGES
 eval "$(starship init zsh)"

@@ -46,5 +46,8 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
 
+require("config.keymaps")
+require("config.vim-options")
+require("config.options")
+
 require("lazy").setup("plugins")
-vim.cmd("colorscheme everforest")

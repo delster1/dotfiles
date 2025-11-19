@@ -8,22 +8,22 @@ vim.opt.termguicolors = true
 
 --THEME ROTATE LEADERrt
 local themes = { "catppuccin", "tokyonight", "gruvbox", "everforest" }
-local current_theme_index = 1  -- Start with the first theme
-vim.api.nvim_set_keymap('i', '<C-H>', '<C-w>', { noremap = true, silent = true })
+local current_theme_index = 1 -- Start with the first theme
+vim.api.nvim_set_keymap("i", "<C-H>", "<C-w>", { noremap = true, silent = true })
 -- Function to set a theme
 local function set_theme(theme)
-    local success, _ = pcall(vim.cmd, "colorscheme " .. theme)
-    if success then
-        print("Switched to theme: " .. theme)
-    else
-        print("Failed to load theme: " .. theme)
-    end
+	local success, _ = pcall(vim.cmd, "colorscheme " .. theme)
+	if success then
+		print("Switched to theme: " .. theme)
+	else
+		print("Failed to load theme: " .. theme)
+	end
 end
 
 -- Function to rotate themes
 local function rotate_theme()
-    current_theme_index = (current_theme_index % #themes) + 1
-    set_theme(themes[current_theme_index])
+	current_theme_index = (current_theme_index % #themes) + 1
+	set_theme(themes[current_theme_index])
 end
 
 -- Set initial theme
@@ -44,10 +44,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local opts = {}
-
-require("config.keymaps")
 require("config.vim-options")
-require("config.options")
-
 require("lazy").setup("plugins")
+vim.api.nvim_create_autocmd("User", {
+	pattern = "VeryLazy",
+	callback = function()
+		require("config.keymaps")
+	end,
+})

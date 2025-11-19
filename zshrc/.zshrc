@@ -49,11 +49,47 @@ fi
 
 # ALIASES
 alias cd="z"
+alias c="clear"
+alias m="man"
 alias nv="nvim"
+alias pls="sudo"
+alias rl="exec zsh"
+alias lg="lazygit" 
+
 alias nvconf="nvim ~/.dotfiles/nvim/.config/nvim/"
+alias nvfzf="nvim $(fzf -m --preview=\"bat --color=always {}\")"
 alias nvzshrc="nvim ~/.dotfiles/zshrc/.config/.zshrc"
+
 alias py="python3"
-alias tas="tmux attach-session"
+
+alias ls="eza -alh8 --icons --git --color=always"
+alias ll="eza -l --icons --git --color=always"
+alias la="eza -la --icons --git --color=always"
+alias lt="eza --tree --level=3 --icons --git --color=always"
+
+alias tmas="tmux attach-session"
+alias tma="tmux attach -t"
+alias tmn="tmux new -s"
+alias tml="tmux ls"
+alias tmsrc="tmux source-file ~/.config/tmux/tmux.conf"
+alias ".."="cd .."
+alias "..."="cd ../.."
+alias "...."="cd ../../.."
+
+alias gs="git status"
+alias ga="git add"
+alias gA="git add -A"
+alias gp="git push"
+alias gc="git commit"
+alias gba="git branch -a"
+alias gm="git merge"
+alias gco="git checkout"
+alias gdm="git diff main"
+alias gd="git diff"
+alias "git yolo"="git add -A && git commit -m \"force pushing lmao, yolo\" && git push --force"
+
+
+
 
 
 # PACKAGES

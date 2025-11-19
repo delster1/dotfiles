@@ -47,5 +47,4 @@ vim.opt.rtp:prepend(lazypath)
 local opts = {}
 
 require("lazy").setup("plugins")
-vim.notify = require("notify")
 vim.cmd("colorscheme everforest")

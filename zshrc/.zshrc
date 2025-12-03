@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_LS_COLORS="false"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 
 # PLUGINS

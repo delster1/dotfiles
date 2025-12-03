@@ -11,7 +11,7 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
-      ensure_installed = { "marksman" },
+      ensure_installed = { "marksman","gleam" },
     },
   },
   {

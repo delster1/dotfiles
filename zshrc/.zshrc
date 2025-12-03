@@ -48,7 +48,6 @@ fi
 # export ARCHFLAGS="-arch $(uname -m)"
 
 # ALIASES
-alias cd="z"
 alias c="clear"
 alias m="man"
 alias bat="batcat"
@@ -114,3 +113,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=$PATH:/usr/local/go/bin

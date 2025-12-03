@@ -1,7 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-
 -- CTRL MOVMENTS
 -- -- Make <C-BS> delete previous word in insert mode
 vim.keymap.set("i", "<C-H>", "<C-w>", { noremap = true })
@@ -14,7 +13,7 @@ vim.keymap.set("n", "<C-n>", ":Neotree right reveal<CR>", { desc = "Neo-tree tog
 vim.keymap.set("n", "<leader>cc", ":Themery<CR>", { desc = "Neo-tree toggle" })
 
 -- LSP
-vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {}, "Open lsp info in hover for current symbol")
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "grr", vim.lsp.buf.references, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
@@ -29,6 +28,7 @@ vim.keymap.set("n", "<leader>k", ":cprev <CR>", { desc = "back in qflist" })
 
 -- TELESCOPE
 vim.keymap.set("n", "<leader>lf", ":Telescope oldfiles<CR>", { desc = "Telescope oldfiles" })
+vim.keymap.set("n", "<leader>ls", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
 -- OUTLINE
 vim.keymap.set("n", "<leader>ls", ":Outline <CR>", { desc = "Outline Symbols" })

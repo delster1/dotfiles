@@ -13,6 +13,7 @@ $git_state\
 
 right_format = """
 $python\
+$conda\
 $nodejs\
 $rust\
 $haskell\
@@ -101,6 +102,9 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 cherry_pick = '[🍒 PICKING](bold red)'
 
 # LANGUAGES
+
+[conda]
+format = '[$symbol$environment](dimmed green) '
 
 [nodejs]
 symbol = ""

@@ -1,12 +1,23 @@
 return {
   "hedyhli/outline.nvim",
+  event = "VeryLazy",
+  keys = {
+    { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle Outline" },
+  },
   config = function()
-    -- Example mapping to toggle outline
-    vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
-      { desc = "Toggle Outline" })
+    require("outline").setup({
+      symbols = {
+        -- Global/default behavior
+        filter = {
+          -- Default: hide Strings for all filetypes
+          default = { "String", exclude = true },
 
-    require("outline").setup {
-      -- Your setup opts here (leave empty to use defaults)
-    }
+          -- Python-specific filter:
+          -- Only show Functions + Classes
+          python = { "Function", "Class" },
+        },
+      },
+    })
   end,
 }
+

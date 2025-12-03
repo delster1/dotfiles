@@ -72,19 +72,16 @@ return {
     npairs.add_rule(
       Rule("[", "]", "markdown")
         :with_move(cond.none())
-        :with_pair(cond.always())
         :with_cr(cond.none())
     )
 
     npairs.add_rule(
       Rule("(", ")", "markdown")
-        :with_pair(cond.always())
     )
 
     -- Images: ![alt](src)
     npairs.add_rule(
       Rule("![", "]", "markdown")
-        :with_pair(cond.always())
     )
 
 

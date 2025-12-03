@@ -28,7 +28,9 @@ vim.keymap.set("n", "<leader>k", ":cprev <CR>", { desc = "back in qflist" })
 
 -- TELESCOPE
 vim.keymap.set("n", "<leader>lf", ":Telescope oldfiles<CR>", { desc = "Telescope oldfiles" })
+vim.keymap.set("n", "<leader>lk", ":Telescope keymaps<CR>", { desc = "Telescope keymaps" })
 vim.keymap.set("n", "<leader>ls", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
 
 -- OUTLINE
 vim.keymap.set("n", "<leader>ls", ":Outline <CR>", { desc = "Outline Symbols" })

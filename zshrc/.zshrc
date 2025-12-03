@@ -98,6 +98,8 @@ alias spt="spotify_player"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+# PATHS 
+#
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/d3/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -115,3 +117,7 @@ unset __conda_setup
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=$PATH:/usr/local/go/bin
+
+# opencode
+export PATH=/home/d3/.opencode/bin:$PATH
+export PATH=$PATH:/home/d3/.dotfiles/update_configs

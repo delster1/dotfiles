@@ -51,6 +51,7 @@ fi
 alias c="clear"
 alias m="man"
 alias bat="batcat"
+alias v="nvim"
 alias nv="nvim"
 alias pls="sudo"
 alias rl="exec zsh"
@@ -58,7 +59,7 @@ alias lg="lazygit"
 alias "portspls"="sudo netstat -tulpn"
 alias ports="netstat -tulpn"
 
-alias nvconf="nvim ~/.dotfiles/nvim/.config/nvim/"
+alias nvconf="nvim ~/.dotfiles/nvim/.config/nvim/."
 alias nvzshrc="nvim ~/.dotfiles/zshrc/.zshrc"
 alias "syncdots"="cd ~/.dotfiles && lg"
 

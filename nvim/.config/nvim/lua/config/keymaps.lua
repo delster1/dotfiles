@@ -12,6 +12,9 @@ vim.keymap.set("n", "<C-n>", ":Neotree right reveal<CR>", { desc = "Neo-tree tog
 -- THEMERY
 vim.keymap.set("n", "<leader>cc", ":Themery<CR>", { desc = "Neo-tree toggle" })
 
+-- AI 
+vim.keymap.set("n", "<leader>ai", ":OpencodePrompt<CR>", { desc = "Open Code" })
+
 -- LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {}, "Open lsp info in hover for current symbol")
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})

@@ -11,7 +11,7 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
-      ensure_installed = { "marksman","gleam" },
+      ensure_installed = { "marksman" },
     },
   },
   {
@@ -25,27 +25,6 @@ return {
         vim.lsp.protocol.make_client_capabilities(),
         cmp_nvim_lsp.default_capabilities()
       )
-      -- 		local lspconfig = vim.lsp.config
-      --
-      -- 		lspconfig.tailwindcss.setup({
-      -- 			capabilities = capabilities,
-      -- 		})
-      -- 		lspconfig.ruby_lsp.setup({
-      -- 			capabilities = capabilities,
-      -- 		})
-      -- 		lspconfig.lua_ls.setup({
-      -- 			capabilities = capabilities,
-      -- 		})
-      -- 		lspconfig.marksman.setup({
-      -- 			capabilities = capabilities,
-      -- 		})
-      --      lspconfig.ltex.setup({
-      --      settings = {
-      --        ltex = {
-      --          language = "en-US",  -- or "en-GB", etc.
-      --        }
-      --        }
-      --      })
     end
   },
 }

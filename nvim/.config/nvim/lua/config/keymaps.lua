@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>ls", "<cmd>Outline<CR>", { desc = "Toggle Outline" 
 
 
 -- OUTLINE
-vim.keymap.set("n", "<leader>ls", ":Outline <CR>", { desc = "Outline Symbols" })
+vim.keymap.set("n", "<leader>ls", ":Telescope symbols <CR>", { desc = "Outline Symbols" })
 
 -- OIL
 local function find_oil_float_win()
@@ -66,3 +66,13 @@ vim.keymap.set("n", "<leader>o", function()
 	local dir = vim.fn.expand("%:p:h")
 	toggle(dir)
 end, { desc = "Oil (float) toggle" })
+
+local function bold()
+    local clients = vim.lsp.get_clients()
+    for _, client in ipairs(clients) do
+        if client.name == "marksman" then
+            
+        end
+        
+    end
+end

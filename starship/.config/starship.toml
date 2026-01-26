@@ -28,12 +28,18 @@ $php\
 $time\
 [](fg:5)\
 [](fg:5)\
-$battery\
+$Battery\
 [](fg:5)\
 [](fg:5)\
 $cmd_duration\
 
 """
+
+[character]
+success_symbol = "[❯](fg:2)"
+error_symbol = "[❯](fg:1)"
+format = "$symbol "
+
 
 [palettes.coolor]
 night = '#00120b'
@@ -176,10 +182,9 @@ format = '[[  $time ](fg:15)]($style)'
 [battery]
 full_symbol = ' '
 charging_symbol = '󱐋 '
-symbol = '󱐋 '
 discharging_symbol = '󱐌 '
-format = '[ $symbol$percentage ]($style)'
 style = "fg:3"
+format = '[ $percentage ]($style)'
 
 [[battery.display]]
 threshold = 10

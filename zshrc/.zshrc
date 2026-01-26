@@ -44,6 +44,7 @@ else
   export EDITOR='nvim'
 fi
 
+export OLLAMA_MODELS=/home/d3/models
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 

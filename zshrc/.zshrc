@@ -4,6 +4,9 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Local unsynced zsh file 
+[[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="false"
 

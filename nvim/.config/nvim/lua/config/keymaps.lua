@@ -4,7 +4,7 @@
 -- CTRL MOVMENTS
 -- -- Make <C-BS> delete previous word in insert mode
 vim.keymap.set("i", "<C-H>", "<C-w>", { noremap = true })
-vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true }) -- some terminals send this
+vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true })        -- some terminals send this
 vim.keymap.set("i", "<C-Backspace>", "<C-w>", { noremap = true }) -- fallback name
 
 vim.keymap.set("n", "<C-n>", ":Neotree right reveal<CR>", { desc = "Neo-tree toggle" })
@@ -12,7 +12,7 @@ vim.keymap.set("n", "<C-n>", ":Neotree right reveal<CR>", { desc = "Neo-tree tog
 -- THEMERY
 vim.keymap.set("n", "<leader>cc", ":Themery<CR>", { desc = "Neo-tree toggle" })
 
--- AI 
+-- AI
 vim.keymap.set("n", "<leader>ai", ":OpencodePrompt<CR>", { desc = "Open Code" })
 
 -- LSP
@@ -40,39 +40,63 @@ vim.keymap.set("n", "<leader>ls", ":Telescope symbols <CR>", { desc = "Outline S
 
 -- OIL
 local function find_oil_float_win()
-	for _, win in ipairs(vim.api.nvim_list_wins()) do
-		local buf = vim.api.nvim_win_get_buf(win)
-		if vim.bo[buf].filetype == "oil" then
-			local cfg = vim.api.nvim_win_get_config(win)
-			if cfg and cfg.relative and cfg.relative ~= "" then
-				return win
-			end
-		end
-	end
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local buf = vim.api.nvim_win_get_buf(win)
+        if vim.bo[buf].filetype == "oil" then
+            local cfg = vim.api.nvim_win_get_config(win)
+            if cfg and cfg.relative and cfg.relative ~= "" then
+                return win
+            end
+        end
+    end
 end
 
 ---Toggle Oil floating window.
 ---If a float is open, close it; otherwise open one (optionally at `dir`).
 ---@param dir? string directory to open (defaults to cwd)
 local function toggle(dir)
-	local float = find_oil_float_win()
-	if float then
-		vim.api.nvim_win_close(float, true)
-	else
-		require("oil").open_float(dir)
-	end
+    local float = find_oil_float_win()
+    if float then
+        vim.api.nvim_win_close(float, true)
+    else
+        require("oil").open_float(dir)
+    end
 end
 vim.keymap.set("n", "<leader>o", function()
-	local dir = vim.fn.expand("%:p:h")
-	toggle(dir)
+    local dir = vim.fn.expand("%:p:h")
+    toggle(dir)
 end, { desc = "Oil (float) toggle" })
 
 local function bold()
-    local clients = vim.lsp.get_clients()
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
     for _, client in ipairs(clients) do
         if client.name == "marksman" then
-            
+            local mode = vim.api.nvim_get_mode().mode
+            if mode:find("i") then
+                return "*<Left>***" -- insert ** and move cursor between them
+            elseif mode:find("v") then
+                return "c**<C-r>\"**<Esc>" -- example: replace selection with **{selection}**
+            end
+            return ""
         end
-        
     end
 end
+
+vim.keymap.set({ "i", "x" }, "<C-b>", bold, { expr = true, desc = "Bold (mode-aware)" })
+
+local function italic()
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
+    for _, client in ipairs(clients) do
+        if client.name == "marksman" then
+            local mode = vim.api.nvim_get_mode().mode
+            if mode:find("i") then
+                return "*<Left>*" -- insert ** and move cursor between them
+            elseif mode:find("v") then
+                return "c*<C-r>\"*<Esc>" -- example: replace selection with **{selection}**
+            end
+            return ""
+        end
+    end
+end
+
+vim.keymap.set({ "i", "x" }, "<C-i>", italic, { expr = true, desc = "Italics" , remap=false})

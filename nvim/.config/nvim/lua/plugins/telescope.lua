@@ -9,6 +9,7 @@ return {
 		-- Setup Telescope with defaults and additional configuration
 		telescope.setup({
 			defaults = {
+                preview = { treesitter = false },
 				prompt_prefix = "🔍 ", -- Custom prompt icon
 				selection_caret = "➜ ", -- Custom caret icon
 				layout_strategy = "flex", -- Flex layout adjusts to window size

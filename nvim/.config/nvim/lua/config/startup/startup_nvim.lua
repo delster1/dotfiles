@@ -31,8 +31,8 @@ local settings = {
         title = "Basic Commands",
         margin = 5,
         content = {
-            { " Recent Files", "Telescope oldfiles", "<leader>of" },
             { "󰏇 Oil", "Oil .", "<leader>ol" },
+            { " Recent Files", "Telescope oldfiles", "<leader>of" },
             { " File Browser", "Telescope file_browser", "<leader>fb" },
             { " Colorschemes", "Themery", "<leader>cc" },
         },

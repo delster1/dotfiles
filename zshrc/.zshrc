@@ -54,7 +54,6 @@ export OLLAMA_MODELS=/home/d3/models
 # ALIASES
 alias c="clear"
 alias m="man"
-alias bat="batcat"
 alias v="nvim"
 alias nv="nvim"
 alias pls="sudo"
@@ -62,7 +61,13 @@ alias rl="exec zsh"
 alias lg="lazygit" 
 alias "portspls"="sudo netstat -tulpn"
 alias ports="netstat -tulpn"
-alias lsys="systemctl list-units --type=service --state=active"
+
+alias sysls="systemctl list-units --type=service --state=active"
+alias sysrestart="sudo systemctl restart"
+alias sysstatus="sudo systemctl status"
+alias sysstop="sudo systemctl stop"
+alias sysstart="sudo systemctl start"
+alias sysreload="sudo systemctl daemon-reload"
 
 alias nvconf="nvim ~/.dotfiles/nvim/.config/nvim/."
 alias nvzshrc="nvim ~/.dotfiles/zshrc/.zshrc"
@@ -97,6 +102,9 @@ alias gco="git checkout"
 alias gdm="git diff main"
 alias gd="git diff"
 alias "git yolo"="git add -A && git commit -m \"force pushing lmao, yolo\" && git push --force"
+alias alien="alienware"
+alias alienware="ssh alienware"
+alias minipc="ssh minipc"
 
 alias spt="spotify_player"
 
@@ -127,3 +135,7 @@ export PATH=$PATH:/usr/local/go/bin
 # opencode
 export PATH=/home/d3/.opencode/bin:$PATH
 export PATH=$PATH:/home/d3/.dotfiles/update_configs
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

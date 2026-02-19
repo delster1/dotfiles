@@ -105,6 +105,7 @@ alias "git yolo"="git add -A && git commit -m \"force pushing lmao, yolo\" && gi
 alias alien="alienware"
 alias alienware="ssh alienware"
 alias minipc="ssh minipc"
+alias rpi4="ssh rpi4"
 
 alias spt="spotify_player"
 
